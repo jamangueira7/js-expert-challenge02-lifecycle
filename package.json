@@ -1,29 +1,34 @@
 {
   "name": "challenge02-lifecycle",
-  "version": "1.0.0",
-  "description": "This is a code challenge where you are supposed to implement the given functions taking into consideration the Javascript Lifecycle and other particularities of the language.",
+  "version": "1.1.0",
+  "description": "This is a code challenge where you are supposed to implement an API that returns a youtube or spotify playlist.",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "type": "module",
   "scripts": {
-    "test": "npx mocha -w --timeout 20000 test/**/*.test.js"
+    "api": "npx json-server --watch api/fake-api-server.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThaSMorato/jse-challenge-2.1.git"
   },
   "keywords": [
     "Tests",
-    "Mocha",
-    "Chai",
     "Javascript",
     "Code",
     "Lifecycle",
     "NodeJS",
     "unit"
   ],
-  "author": "Wellington S. Almeida (WellsSA)",
+  "author": "Thales Silva Morato (ThaSMorato)",
   "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.3",
-    "sinon": "^12.0.1"
+  "bugs": {
+    "url": "https://github.com/ThaSMorato/jse-challenge-2.1/issues"
+  },
+  "homepage": "https://github.com/ThaSMorato/jse-challenge-2.1#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "engines": {
+    "node" : "^18.13.0"
   }
 }
