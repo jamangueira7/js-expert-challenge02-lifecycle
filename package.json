@@ -19,16 +19,20 @@
     "NodeJS",
     "unit"
   ],
-  "author": "Thales Silva Morato (ThaSMorato)",
+  "author": "João Antônio Mangueira (jamangueira7)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ThaSMorato/jse-challenge-2.1/issues"
   },
   "homepage": "https://github.com/ThaSMorato/jse-challenge-2.1#readme",
   "dependencies": {
-    "moment": "^2.29.4"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "moment": "^2.29.4",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.3"
   },
   "engines": {
-    "node" : "^18.13.0"
+    "node": "^v19.7.0"
   }
 }

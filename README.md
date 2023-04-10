@@ -1,127 +1,54 @@
-# Story: Minha playlist
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+  <a href="#-como-rodar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;
+  </p>
+<br>
 
-## Motivação
+# JSExpert: Desafio Modulo IV - Minha playlist
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Yarn](https://yarnpkg.com/)
+- [Npm](https://www.npmjs.com/)
+- [NodeJS](https://nodejs.org/en/) - v19.7.0
+
+
+## 💻 Projeto
 
 No `módulo 03 - Conceitos fundamentais sobre o ciclo de vida do Javascript` vimos diferentes conceitos dentro do nosso querido Java Script, então escolhemos os mais relevantes e desenvolvemos um desafios onde possam ser ultilizados.
 
-## Idéia geral
+Descrição completa do desafio [aqui](https://github.com/training-erickwendel/jsexpert-challenge02-lifecycle)
 
-Este desafio consiste em uma API (como feita no [desafio anterior](https://github.com/training-erickwendel/jsexpert-exercicio01-pokeapi)) com duas rotas, cada rota devolve uma playlist.
+## 🚀 Como Rodar
 
-## Funcionalidades
+- Clone o projeto.
+- Entre na raiz do projeto.
+- Execute `npm install`.
+- Execute `npm run api`
+- Execute `npm run test` ou `npm run test:cov` para rodar o test
 
-1. `Default`
-Deve retornar 404 ou uma mensagem de `hello world`
+## ↗ Rotas
 
-2. `YoutubeMusic e SpotifyMusic`
-Devem derivar de `music.js` e cada uma deve conter um método de coerção de tipo (`valueOf`/`toString` e `[Symbol.toPrimitive]`)
+- **`GET /`**: Rota default
 
-- 2.1 `String`
-  Deve retornar uma string contendo `Nome da música - Nome da banda - Nome do álbum`
-
-- 2.2 `Number`
-  Deve retornar o valor em milissegundos da duração da música
-
-3. `GET/youtube`
-Deve retornar a playlist da fake API Youtube
-
-4. `GET/spotify`
-Deve retornar a playlist da fake API Spotify
-
-## Testes
-
-* [ ] Unitários
-
-* [ ] E2E
-
-* [ ] Prototype das classes derivadas de `music.js`
-
-* [ ] Coersão de tipo devolvendo o esperado
-
-### Extras
-
-* [ ] TDD e BDD, será que rola? Acho que vale a tentativa!
-
-* [ ] Publicar o code coverage no github pages!
-
-* [ ] Consegue aplicar os conceitos de clonagem de Objeto?
-
-
-### Arquitetura e onde trabalhar
-
-A arquitetura nesse desafio é livre, fique a vontade para desenvolver como bem entender, a única restrição é ultilizar as classes `Music`, `YoutubeMusic` e `SpotifyMusic`.
-
+Retorna:
 ```
-project
-│   README.md
-│   package.json
-│
-└───src
-│   |
-|   |__util
-|      |
-|      |__api.js
-|      |__timeFormat.js
-│
-└───test
-│   │
-│   └───unit
-|   |
-|   |___e2e
+{
+    msg: "404 - Essa rota não existe."
+}
 ```
 
-### Checklist features
+## 🤔 Como contribuir
 
-- Web API
-  * [ ] Deve ter uma rota raiz que retorne 404 ou um hello world.
-  * [ ] Deve ter uma rota de `/youtube`, onde:
-    * [ ] Deve consumir a rota `/youtube` da fake APIs
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+- Faça push para a sua branch: `git push origin minha-feature`.
 
-  * [ ] Deve ter uma rota de `/spotify`, onde:
-    * [ ] Deve consumir a rota `/spotify` da fake APIs
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
 
-  * [ ] Deve retornar um objeto JSON com essa estrutura
-  ```
-  {
-    musics:[ // Array de objetos
-        {
-            display: "Nome da música - Nome da banda - Nome do álbum",
-            duration: 00:03:55:255 // Duração da música
-        },
-        ...
-    ],
-    duration: 01:30:25:000 // Duração da playlist
-  }
-  ```
+## 📝 Licença
 
-- Youtube e Spotify Music
-  * [ ] Deve derivar de `Music`
-  * [ ] Cada um deve ter um método de coerção de tipo
-  * [ ] Os métodos de coerção devem ser diferentes para cada classe
-
-- Testes
-  * [ ] Deve ter testes unitários que cubra todas as funções
-  * [ ] Deve ter testes end-2-end que cubra todas as rotas
-  * [ ] Deve ter relatório de 100% de code coverage
-  * [ ] Deve testar o prototype das classes derivadas de `Music`
-  * [ ] Deve testar a coersão de tipo das classes derivadas de `Music`
-
-## Iniciando
-
-1. `package.json` - Troque a versão do node para a sua versão atual (`node -v`) e coloque seu nome no `Author`.
-
-2. `npm run api` - Dar uma olhada no retorno da api e pensar na melhor estrategia para os dados retornados.
-
-4. `npm i` - Escolha as bibliotecas de testes e instale elas (como as aulas do modulo 1 são com o CommonJS e as bibliotecas `chai`, `mocha`, `sinon` e `nyc`, as configuralções de coverage já foi feita pensando nelas).
-
-5. ### Bora codar
-
-## Submissão
-
-1. Inicialize um repósitório git com um arquivo README.md contendo seu nome, quais tópicos do checklist foram implementados e, caso queira, um breve resumo de cada tópico.
-
-2. Crie o projeto e os testes.
-
-3. Coloque as instruções de como configurar e executar seu projeto e os testes no README.md (não se esqueça do coverage com o `nyc`).
-
-4. Envie o link no canal `#desafios-jsexpert` da nossa comunidade no discord.
+Esse projeto está sob a licença MIT.
