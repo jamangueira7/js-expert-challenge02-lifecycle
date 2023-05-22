@@ -29,6 +29,8 @@ Cobertura:
 
 ![img.png](.github%2Fimg.png)
 
+![img_2.png](.github%2Fimg_2.png)
+
 ## 🚀 Como Rodar
 
 - Clone o projeto.
