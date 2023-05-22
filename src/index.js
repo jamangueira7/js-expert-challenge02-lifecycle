@@ -1,6 +1,4 @@
-import App from "./app.js";
-
-const DEFAULT_PORT = 3000;
+const App = require("./app");
 
 const app = new App();
-app.createServer(DEFAULT_PORT);
+app.createServer();

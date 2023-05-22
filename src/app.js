@@ -1,23 +1,50 @@
-import http  from "http";
+const http = require('http');
+const Api = require('./util/api');
+
+const YoutubeRepository = require("./repository/youtubeRepository.js")
+const SpotifyRepository = require("./repository/spotifyRepository.js")
+
+const YoutubeService = require("./service/youtubeService.js")
+const SpotifyService = require("./service/spotifyService.js")
 
 const DEFAULT_HEADERS = {
   "Content-Type": "application/json",
 };
+const DEFAULT_PORT = 3000;
 
-export default class App {
+const createService = () => {
+  const api = new Api();
+  const youtubeRepository = new YoutubeRepository({ api: api });
+  const spotifyRepository = new SpotifyRepository({ api: api });
+
+  return {
+    YoutubeService: new YoutubeService({ repository: youtubeRepository }),
+    SpotifyService: new SpotifyService({ repository: spotifyRepository }),
+  }
+}
+
+class App {
+  constructor(dependencies = createService()) {
+    this.youtubeService = dependencies.YoutubeService;
+    this.spotifyService = dependencies.SpotifyService;
+  }
 
   createRoutes() {
     return {
       default: (request, response) => {
-        // TODO
+        response.writeHeader(404, DEFAULT_HEADERS);
+        response.write(JSON.stringify({ msg: "404 - Essa rota não existe. Tente /youtube ou /spotify" }));
         return response.end();
       },
       "/youtube:get": async (request, response) => {
-        //TODO
+        const musics = await this.youtubeService.getAllMusicsYoutube();
+        response.write(JSON.stringify(musics));
         return response.end();
       },
       "/spotify:get": async (request, response) => {
-        //TODO
+        const musics = await this.spotifyService.getAllMusicsSpotify();
+        response.write(JSON.stringify(musics));
+        return response.end();
         return response.end();
       },
     };
@@ -35,7 +62,7 @@ export default class App {
     return chosen(request, response);
   }
 
-  createServer(port) {
+  createServer(port = DEFAULT_PORT) {
     const app = http
       .createServer(this.handler.bind(this))
       .listen(port, () => console.log(`Listening on ${port}`));
@@ -43,3 +70,5 @@ export default class App {
     return app;
   }
 }
+
+module.exports = App;
