@@ -45,7 +45,6 @@ class App {
         const musics = await this.spotifyService.getAllMusicsSpotify();
         response.write(JSON.stringify(musics));
         return response.end();
-        return response.end();
       },
     };
   }

@@ -21,6 +21,14 @@ No `módulo 03 - Conceitos fundamentais sobre o ciclo de vida do Javascript` vim
 
 Descrição completa do desafio [aqui](https://github.com/training-erickwendel/jsexpert-challenge02-lifecycle)
 
+Testes passando:
+
+![img_1.png](.github%2Fimg_1.png)
+
+Cobertura: 
+
+![img.png](.github%2Fimg.png)
+
 ## 🚀 Como Rodar
 
 - Clone o projeto.
@@ -36,7 +44,55 @@ Descrição completa do desafio [aqui](https://github.com/training-erickwendel/j
 Retorna:
 ```
 {
-    msg: "404 - Essa rota não existe."
+    msg: "404 - Essa rota não existe. Tente /youtube ou /spotify"
+}
+```
+
+- **`GET /youtube`**: Rota playlist Youtube
+
+Retorna:
+```
+{
+   "musics":[
+      {
+         "display":"Locked out of Heaven - Unorthodox Jukebox - Bruno Mars",
+         "duration":"00:03:53:478"
+      },
+      {
+         "display":"Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground) - Listen Up! The Official 2010 FIFA World Cup Album - Shakira",
+         "duration":"00:03:22:626"
+      },
+      ...
+      {
+         "display":"Waiting For Love - Stories - Avicii",
+         "duration":"00:03:50:613"
+      }
+   ],
+   "duration":"06:11:19:216"
+}
+```
+
+- **`GET /spotify`**: Rota playlist Spotify
+
+Retorna:
+```
+{
+   "musics":[
+      {
+         "display":"Flowers - Flowers - undefined",
+         "duration":"Invalid date"
+      },
+      {
+         "display":"Kill Bill - SOS - undefined",
+         "duration":"Invalid date"
+      },
+      ...
+      {
+         "display":"DESPECHÁ - MOTOMAMI + - undefined",
+         "duration":"Invalid date"
+      }
+   ],
+   "duration":"Invalid date"
 }
 ```
 
